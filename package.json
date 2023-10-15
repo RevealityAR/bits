@@ -7,6 +7,10 @@
   "engines": {
     "node": ">=12.14.1"
   },
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
   "dependencies": {
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
@@ -14,12 +18,35 @@
     "css-element-queries": "^1.2.3",
     "gatsby": "^5.0.0",
     "gatsby-link": "^5.0.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
     "react-helmet": "^6.0.0",
     "react-photoswipe-gallery": "^2.0.0"
   },
+  "peerDependencies": {
+    "@mui/material": "^5.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
   "devDependencies": {
+    "@babel/preset-env": "^7.23.2",
+    "@babel/preset-react": "^7.22.15",
+    "@babel/preset-typescript": "^7.23.2",
+    "@mui/material": "5.14.13",
+    "@storybook/addon-essentials": "7.4.6",
+    "@storybook/addon-interactions": "7.4.6",
+    "@storybook/addon-links": "7.4.6",
+    "@storybook/addon-onboarding": "1.0.8",
+    "@storybook/addon-themes": "7.4.6",
+    "@storybook/blocks": "7.4.6",
+    "@storybook/react": "7.4.6",
+    "@storybook/react-vite": "^7.4.6",
+    "@storybook/react-webpack5": "^7.4.6",
+    "@storybook/testing-library": "0.2.2",
+    "@tsconfig/strictest": "2.0.2",
+    "@tsconfig/vite-react": "2.0.1",
+    "babel-plugin-remove-graphql-queries": "5.12.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "storybook": "7.4.6",
     "typescript": "5.2.2"
   }
 }
