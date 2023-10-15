@@ -1,16 +1,16 @@
-import React from 'react'
-import Footer from '../../Footer/Footer'
-import HoloNavbar from './../RealNavbar/Navbar'
-import RevealityFooter from './../RealFooter/Footer'
+import React from "react";
+import Footer from "../../Footer/Footer";
+import HoloNavbar from "../RealNavbar/Navbar";
+import RevealityFooter from "../RealFooter/Footer";
 import {
   ThemeProvider as MaterialThemeProvider,
   createTheme,
-} from '@mui/material/styles'
-import { ThemeProvider, Global } from '@emotion/react'
-import LanguageSwitcher from '../../Common/LanguageSwitcher/LanguageSwitcher'
-import { defaultLang } from '../../../locales/locales'
-import { languageAutoRedirect } from '../../Common/locales/localeUtils'
-import { navbarConfig, footerConfig } from '../../../globalConfig'
+} from "@mui/material/styles";
+import { ThemeProvider, Global } from "@emotion/react";
+import LanguageSwitcher from "../../Common/LanguageSwitcher/LanguageSwitcher";
+import { defaultLang } from "../../../locales/locales";
+import { languageAutoRedirect } from "../../Common/locales/localeUtils";
+import { navbarConfig, footerConfig } from "../../../globalConfig";
 import {
   appBarCSS,
   customColorCSS,
@@ -18,13 +18,13 @@ import {
   gridFooterCSS,
   gridNavBarCSS,
   gridNavContentFooterCSS,
-} from './styles'
-import { bodyCSS } from '../../../globalStyles'
+} from "./styles";
+import { bodyCSS } from "../../../globalStyles";
 
 interface OwnProps {
-  children: any
-  language: any
-  location: any
+  children: any;
+  language: any;
+  location: any;
 }
 export default function LayoutRoot({ children, language, location }: OwnProps) {
   // const isItRootUrl =
@@ -33,31 +33,31 @@ export default function LayoutRoot({ children, language, location }: OwnProps) {
   //   location.pathname === '/fr/'
   // homepage: single slash
 
-  if (language !== 'fr' && language !== 'en') {
-    language = defaultLang
+  if (language !== "fr" && language !== "en") {
+    language = defaultLang;
   }
   // Skip build, Browsers only
-  if (typeof window !== 'undefined') {
-    languageAutoRedirect(language, location.pathname)
+  if (typeof window !== "undefined") {
+    languageAutoRedirect(language, location.pathname);
   }
   const theme = createTheme({
     palette: {
-      mode: 'light',
+      mode: "light",
       primary: {
-        main: '#2771cc', // Sky blue
+        main: "#2771cc", // Sky blue
       },
       secondary: {
-        main: '#649DE5', // Sky Blue Hover
+        main: "#649DE5", // Sky Blue Hover
       },
       info: {
-        main: '#2A6DBF',
+        main: "#2A6DBF",
       },
       background: {
-        default: '#fcf9e8',
-        paper: 'transparent',
+        default: "#fcf9e8",
+        paper: "transparent",
       },
       action: {
-        hover: 'rgba(0,0,0,0.56)',
+        hover: "rgba(0,0,0,0.56)",
       },
 
       // FOR TEXT ? #34393A
@@ -72,7 +72,7 @@ export default function LayoutRoot({ children, language, location }: OwnProps) {
       // E.g., shift from Red 500 to Red 300 or Red 700.
       tonalOffset: 0.2,
     },
-  })
+  });
 
   return (
     <MaterialThemeProvider theme={theme}>
@@ -103,5 +103,5 @@ export default function LayoutRoot({ children, language, location }: OwnProps) {
         </div>
       </ThemeProvider>
     </MaterialThemeProvider>
-  )
+  );
 }

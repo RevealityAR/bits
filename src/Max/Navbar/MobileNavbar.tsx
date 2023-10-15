@@ -1,12 +1,12 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import BottomNavigation from '@mui/material/BottomNavigation'
-import BottomNavigationAction from '@mui/material/BottomNavigationAction'
-import PaletteRoundedIcon from '@mui/icons-material/PaletteRounded'
-import RssFeedRoundedIcon from '@mui/icons-material/RssFeedRounded'
-import PersonRoundedIcon from '@mui/icons-material/PersonRounded'
-import { NamedLink } from '../../types'
-import { ThemeProvider, useTheme } from '@mui/material'
+import React from "react";
+import { Link } from "gatsby";
+import BottomNavigation from "@mui/material/BottomNavigation";
+import BottomNavigationAction from "@mui/material/BottomNavigationAction";
+import PaletteRoundedIcon from "@mui/icons-material/PaletteRounded";
+import RssFeedRoundedIcon from "@mui/icons-material/RssFeedRounded";
+import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
+import { NamedLink } from "../../../types";
+import { ThemeProvider, useTheme } from "@mui/material";
 
 // TODO: disabled for Gatsby V5
 // const useStyles = makeStyles({
@@ -28,30 +28,30 @@ import { ThemeProvider, useTheme } from '@mui/material'
 // })
 
 interface OwnProps {
-  links: Array<NamedLink>
+  links: Array<NamedLink>;
 }
 export default function MobileNavbar({ links }: OwnProps) {
-  const theme = useTheme()
+  const theme = useTheme();
   // TODO: disabled for V5
   // const classes = useStyles()
   // const childClasses = useChildStyles()
-  const [value, setValue] = React.useState(0)
+  const [value, setValue] = React.useState(0);
   // TODO: to make something truly factorised, user shall be able to override ths method by injecting it in the component
   const populateIconForName = (name) => {
     switch (name) {
-      case 'WORK':
-      case 'PROJETS':
-      case 'PROJECTS':
-        return <PaletteRoundedIcon />
-      case 'NEWS':
-        return <RssFeedRoundedIcon />
-      case 'ABOUT':
-      case 'A PROPOS':
-        return <PersonRoundedIcon />
+      case "WORK":
+      case "PROJETS":
+      case "PROJECTS":
+        return <PaletteRoundedIcon />;
+      case "NEWS":
+        return <RssFeedRoundedIcon />;
+      case "ABOUT":
+      case "A PROPOS":
+        return <PersonRoundedIcon />;
       default:
-        return <></>
+        return <></>;
     }
-  }
+  };
 
   return (
     <ThemeProvider theme={{}}>
@@ -59,8 +59,8 @@ export default function MobileNavbar({ links }: OwnProps) {
         value={-1} // Trick material-ui its defaut value is incorrect. Active classname takes care of it
         showLabels
         sx={{
-          boxShadow: '0 -2px 2px 0 rgb(99 99 99 / 10%)',
-          borderTop: 'solid 1px #ebebeb',
+          boxShadow: "0 -2px 2px 0 rgb(99 99 99 / 10%)",
+          borderTop: "solid 1px #ebebeb",
           backgroundColor: theme.palette.background.paper,
         }}
       >
@@ -73,9 +73,9 @@ export default function MobileNavbar({ links }: OwnProps) {
               label={link.name}
               icon={populateIconForName(link.name)}
             />
-          )
+          );
         })}
       </BottomNavigation>
     </ThemeProvider>
-  )
+  );
 }

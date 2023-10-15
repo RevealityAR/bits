@@ -1,29 +1,29 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql, Link, StaticQuery } from 'gatsby'
-import { strings } from './strings'
-import TwitterIcon from '@mui/icons-material/Twitter'
-import LinkedInIcon from '@mui/icons-material/LinkedIn'
-import InstagramIcon from '@mui/icons-material/Instagram'
-import MusicNoteIcon from '@mui/icons-material/MusicNote'
-import FacebookIcon from '@mui/icons-material/Facebook'
-import MailForm from '../mailchimpFormReveality/mailchimpFormPrivacyFriendly'
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql, Link, StaticQuery } from "gatsby";
+import { strings } from "./strings";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import MusicNoteIcon from "@mui/icons-material/MusicNote";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import MailForm from "../mailchimpFormReveality/mailchimpFormPrivacyFriendly";
 
 const MAILCHIMP_URL =
-  'https://reveality.us5.list-manage.com/subscribe/post?u=8b4e477d425a1fcb90d90a287&amp;id=7331d8e0bb'
+  "https://reveality.us5.list-manage.com/subscribe/post?u=8b4e477d425a1fcb90d90a287&amp;id=7331d8e0bb";
 
 const propTypes = {
   links: PropTypes.array,
   lang: PropTypes.string,
-}
+};
 
 const defaultProps = {
   links: [],
-  lang: 'en',
-}
-import { useTheme } from '@emotion/react'
-import { NamedLink } from '../../types'
-import { LangCode } from '../../types'
+  lang: "en",
+};
+import { useTheme } from "@emotion/react";
+import { NamedLink } from "../../../types";
+import { LangCode } from "../../../types";
 import {
   socialIconCSS,
   footerCSS,
@@ -37,14 +37,14 @@ import {
   insideCSS,
   followUsCSS,
   followUsStuffCSS,
-} from './styles'
+} from "./styles";
 
 interface OwnProps {
-  customLinks: Array<NamedLink>
-  lang: LangCode
+  customLinks: Array<NamedLink>;
+  lang: LangCode;
 }
 export default function Footer({ customLinks, lang }: OwnProps) {
-  const theme = useTheme()
+  const theme = useTheme();
 
   const socialMediaLinks = (links) => {
     return (
@@ -182,12 +182,12 @@ export default function Footer({ customLinks, lang }: OwnProps) {
           )}
         </div>
       </div>
-    )
-  }
+    );
+  };
 
   // Dirty default language switcher
-  if (lang !== 'en' && lang !== 'fr') {
-    lang = 'en'
+  if (lang !== "en" && lang !== "fr") {
+    lang = "en";
   }
 
   return (
@@ -212,42 +212,42 @@ export default function Footer({ customLinks, lang }: OwnProps) {
         },
       }) => {
         const links = {
-          twitter: twitter === '' ? undefined : twitter,
-          tiktok: tiktok === '' ? undefined : tiktok,
-          github: github === '' ? undefined : github,
-          instagram: instagram === '' ? undefined : instagram,
-          facebook: facebook === '' ? undefined : facebook,
-          vimeo: vimeo === '' ? undefined : vimeo,
-          soundcloud: soundcloud === '' ? undefined : soundcloud,
-          youtube: youtube === '' ? undefined : youtube,
-          linkedin: linkedin === '' ? undefined : linkedin,
-        }
+          twitter: twitter === "" ? undefined : twitter,
+          tiktok: tiktok === "" ? undefined : tiktok,
+          github: github === "" ? undefined : github,
+          instagram: instagram === "" ? undefined : instagram,
+          facebook: facebook === "" ? undefined : facebook,
+          vimeo: vimeo === "" ? undefined : vimeo,
+          soundcloud: soundcloud === "" ? undefined : soundcloud,
+          youtube: youtube === "" ? undefined : youtube,
+          linkedin: linkedin === "" ? undefined : linkedin,
+        };
 
         return (
           <div css={footerCSS}>
             <div
               css={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginTop: '2rem',
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                marginTop: "2rem",
               }}
             >
               <p
                 css={{
-                  fontSize: '1.2em',
+                  fontSize: "1.2em",
 
                   fontWeight: 600,
-                  marginBottom: '1em',
+                  marginBottom: "1em",
                 }}
               >
                 {strings.joinNewsletter[lang]}
               </p>
               <MailForm
-                uniqueId={'footerForm'}
+                uniqueId={"footerForm"}
                 mailchimpURL={MAILCHIMP_URL}
-                uniqueAntiSpamId={'b_8b4e477d425a1fcb90d90a287_7331d8e0bb'}
+                uniqueAntiSpamId={"b_8b4e477d425a1fcb90d90a287_7331d8e0bb"}
               />
             </div>
 
@@ -300,7 +300,7 @@ export default function Footer({ customLinks, lang }: OwnProps) {
               </div>
 
               <div css={contactCSS}>
-                <div css={contactInfosCSS} className={'contactInfos'}>
+                <div css={contactInfosCSS} className={"contactInfos"}>
                   <p>{strings.contact[lang]}</p>
                   <p>
                     {/* <strong>EMAIL</strong><br/> */}
@@ -323,11 +323,11 @@ export default function Footer({ customLinks, lang }: OwnProps) {
 
             <div
               css={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                textAlign: 'center',
-                color: '#34393A',
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                textAlign: "center",
+                color: "#34393A",
                 ...insideCSS,
               }}
             >
@@ -337,16 +337,16 @@ export default function Footer({ customLinks, lang }: OwnProps) {
                     <Link key={link.name} to={link.path}>
                       {link.name}
                     </Link>
-                  )
+                  );
                 })}
               </div>
               <p>Copyright 2023 Reveality</p>
             </div>
           </div>
-        )
+        );
       }}
     />
-  )
+  );
 }
 
 const query = graphql`
@@ -368,4 +368,4 @@ const query = graphql`
       }
     }
   }
-`
+`;
