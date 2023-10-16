@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { userEvent, within } from "@storybook/testing-library";
 
 import Footer from "./Footer";
 
@@ -46,5 +47,12 @@ export const Socials: Story = {
 export const CustomLinks: Story = {
   args: {
     customLinks: [{ name: "test", path: "test" }],
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    const link = canvas.getByRole("link", { name: "test" });
+
+    await userEvent.click(link);
   },
 };

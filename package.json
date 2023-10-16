@@ -27,7 +27,8 @@
   "scripts": {
     "build": "vite build",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "test-storybook": "test-storybook"
   },
   "dependencies": {
     "react-helmet": "^6.0.0"
@@ -56,6 +57,7 @@
     "@storybook/react-vite": "^7.4.6",
     "@storybook/react-webpack5": "^7.4.6",
     "@storybook/testing-library": "0.2.2",
+    "@storybook/test-runner": "0.13.0",
     "@tsconfig/strictest": "2.0.2",
     "@tsconfig/vite-react": "2.0.1",
     "@vitejs/plugin-react": "4.1.0",
