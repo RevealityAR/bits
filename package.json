@@ -1,28 +1,42 @@
 {
   "name": "@reveality/bits",
   "description": "Bits for Gatsby websites of the Reveality Org",
-  "version": "2.0.0",
+  "version": "0.0.0",
   "author": "Maxime Touroute <maxime.touroute@gmail.com>",
   "licence": "MIT",
   "engines": {
     "node": ">=12.14.1"
   },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": "git@github.com:RevealityAR/bits.git",
   "scripts": {
+    "build": "vite build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@emotion/react": "^11.4.0",
-    "@emotion/styled": "^11.3.0",
-    "browser-lang": "^0.1.0",
-    "css-element-queries": "^1.2.3",
-    "gatsby": "^5.0.0",
-    "gatsby-link": "^5.0.0",
-    "react-helmet": "^6.0.0",
-    "react-photoswipe-gallery": "^2.0.0"
+    "react-helmet": "^6.0.0"
   },
   "peerDependencies": {
+    "@emotion/react": "^11.0.0",
     "@mui/material": "^5.0.0",
+    "gatsby": "^5.0.0",
+    "gatsby-link": "^5.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
@@ -31,6 +45,7 @@
     "@babel/preset-react": "^7.22.15",
     "@babel/preset-typescript": "^7.23.2",
     "@mui/material": "5.14.13",
+    "@emotion/react": "11.11.1",
     "@storybook/addon-essentials": "7.4.6",
     "@storybook/addon-interactions": "7.4.6",
     "@storybook/addon-links": "7.4.6",
@@ -43,10 +58,19 @@
     "@storybook/testing-library": "0.2.2",
     "@tsconfig/strictest": "2.0.2",
     "@tsconfig/vite-react": "2.0.1",
+    "@vitejs/plugin-react": "4.1.0",
     "babel-plugin-remove-graphql-queries": "5.12.0",
+    "builtin-modules": "3.3.0",
+    "gatsby": "5.12.6",
+    "gatsby-link": "5.12.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "storybook": "7.4.6",
-    "typescript": "5.2.2"
-  }
+    "typescript": "5.2.2",
+    "vite": "4.4.11",
+    "vite-plugin-dts": "3.6.0"
+  },
+  "files": [
+    "dist"
+  ]
 }
