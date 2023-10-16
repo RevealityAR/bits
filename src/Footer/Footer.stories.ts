@@ -20,6 +20,31 @@ export default meta;
 type Story = StoryObj<typeof Footer>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Primary: Story = {
+export const Default: Story = {
   args: {},
+};
+
+export const Author: Story = {
+  args: {
+    author: "John Doe",
+    authorMail: "john.doe@reveality.com",
+  },
+};
+
+export const Socials: Story = {
+  args: {
+    github: "reveality",
+    facebook: "reveality",
+    twitter: "reveality",
+    instagram: "reveality",
+    vimeo: "reveality",
+    soundcloud: "reveality",
+    youtube: "reveality",
+  },
+};
+
+export const CustomLinks: Story = {
+  args: {
+    customLinks: [{ name: "test", path: "test" }],
+  },
 };
