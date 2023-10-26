@@ -20,6 +20,11 @@ jobs:
         run: npm ci
       - name: Build Components
         run: npm run build
+      - name: Upload build
+        uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: dist
 
   test:
     runs-on: ubuntu-latest
@@ -37,6 +42,10 @@ jobs:
         run: npx playwright install --with-deps
       - name: Build Storybook
         run: npm run build-storybook
+      - name: Download build
+        uses: actions/download-artifact@v3
+        with:
+          name: build
       - name: Serve Storybook and run tests
         run: |
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
