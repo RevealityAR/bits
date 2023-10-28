@@ -11,6 +11,7 @@ import LanguageSwitcher from "../../Common/LanguageSwitcher/LanguageSwitcher";
 import { defaultLang } from "../../../locales/locales";
 import { languageAutoRedirect } from "../../Common/locales/localeUtils";
 import { navbarConfig, footerConfig } from "../../../globalConfig";
+import { supportedLangs } from '../../../locales/locales'
 import {
   appBarCSS,
   customColorCSS,
@@ -38,8 +39,7 @@ export default function LayoutRoot({
   //   location.pathname === '/fr' ||
   //   location.pathname === '/fr/'
   // homepage: single slash
-
-  if (language !== "fr" && language !== "en") {
+  if(supportedLangs[language] === void 0) {
     language = defaultLang;
   }
   // Skip build, Browsers only
