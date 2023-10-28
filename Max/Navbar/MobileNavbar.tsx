@@ -39,17 +39,19 @@ export default function MobileNavbar({ links }: OwnProps) {
   // TODO: to make something truly factorised, user shall be able to override ths method by injecting it in the component
   const populateIconForName = (name) => {
     switch (name) {
-      case "WORK":
-      case "PROJETS":
-      case "PROJECTS":
-        return <PaletteRoundedIcon />;
-      case "NEWS":
-        return <RssFeedRoundedIcon />;
-      case "ABOUT":
-      case "A PROPOS":
-        return <PersonRoundedIcon />;
+      case 'WORK':
+      case 'TRABAJO':
+      case 'PROJETS':
+      case 'PROJECTS':
+        return <PaletteRoundedIcon />
+      case 'NEWS':
+        return <RssFeedRoundedIcon />
+      case 'SOBRE MÌ':
+      case 'A PROPOS':
+      case 'A PROPOS':
+        return <PersonRoundedIcon />
       default:
-        return <></>;
+        return <></>
     }
   };
 

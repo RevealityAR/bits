@@ -14,18 +14,21 @@ import { containerCSS } from "./styles";
 
 const strings: Record<string, Record<LangCode, string>> = {
   all: {
-    en: "All",
-    fr: "Tout",
+    en: 'All',
+    fr: 'Tout',
+    es: 'Todo'
   },
   software: {
-    en: "Software",
-    fr: "Logiciel",
+    en: 'Software',
+    es: 'Software',
+    fr: 'Logiciel',
   },
   other: {
-    en: "Others",
-    fr: "Divers",
+    en: 'Others',
+    es: 'Otros',
+    fr: 'Divers',
   },
-};
+}
 
 interface OwnProps {
   posts: any;

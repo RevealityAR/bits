@@ -14,7 +14,12 @@ export interface FooterConfig {
   [key: LangCode]: Array<NamedLink>
 }
 
-export type LangCode = 'en' | 'fr'
+// Modern Lang types
+export type LangCode = 'en' | 'fr' | 'es'
+export type LangString =  Record<LangCode, string>;
+export type LangReactElement = Record<LangCode, ReactString>;
+export type LangRecord = Record<string, LangString>;
+export type LangReactRecord = Record<string, LangReactElement>;
 
 export interface LangSettings {
   urlPrefix: string
@@ -25,4 +30,4 @@ export interface LangSettings {
 
 export type SupportedLangs = Record<LangCode, LangSettings>
 export type ReactString = string | JSX.Element
-export type StringList = Record<string, Record<LangCode, ReactString>>
+export type StringList = Record<string, LangReactElement>
