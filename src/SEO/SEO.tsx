@@ -1,5 +1,4 @@
 /** @jsxImportSource @emotion/react */
-import { Helmet } from "react-helmet";
 
 export interface SEOProps {
   title?: string;
@@ -28,17 +27,7 @@ export default function SEO({
   titleTemplate,
 }: SEOProps) {
   return (
-    <Helmet
-      title={title}
-      titleTemplate={titleTemplate}
-      link={[
-        {
-          rel: "shortcut icon",
-          type: "image/png",
-          href: `${favicon}`,
-        },
-      ]}
-    >
+    <>
       {title && <title>{title}</title>}
       <meta name="robots" content="all" />
       <meta name="viewport" content="user-scalable=yes, width=device-width" />
@@ -74,6 +63,6 @@ export default function SEO({
       )}
 
       <html lang={langCode} />
-    </Helmet>
+    </>
   );
 }
