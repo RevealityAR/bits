@@ -1,28 +1,28 @@
 export interface NamedLink {
-  path: string
-  name: string
+  path: string;
+  name: string;
 }
 
 export interface NavbarConfig {
-  name: string
+  name: string;
   links: {
-    [key: LangCode]: Array<NamedLink>
-  }
+    [key in LangCode]: NamedLink[];
+  };
 }
 
-export interface FooterConfig {
-  [key: LangCode]: Array<NamedLink>
-}
+export type FooterConfig = {
+  [key in LangCode]: Array<NamedLink>;
+};
 
-export type LangCode = 'en' | 'fr'
+export type LangCode = "en" | "fr";
 
 export interface LangSettings {
-  urlPrefix: string
-  humanName: string
-  default?: boolean
-  shortName: string
+  urlPrefix: string;
+  humanName: string;
+  default?: boolean;
+  shortName: string;
 }
 
-export type SupportedLangs = Record<LangCode, LangSettings>
-export type ReactString = string | JSX.Element
-export type StringList = Record<string, Record<LangCode, ReactString>>
+export type SupportedLangs = Record<LangCode, LangSettings>;
+export type ReactString = string | JSX.Element;
+export type StringList = Record<string, Record<LangCode, ReactString>>;
