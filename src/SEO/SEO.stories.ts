@@ -35,7 +35,5 @@ export const FullMeta: Story = {
     langCode: "en",
     useRobotoFont: true,
     siteName: "Reveality",
-    favicon: "https://reveality.com/favicon.ico",
-    titleTemplate: "%s | Reveality",
   },
 };

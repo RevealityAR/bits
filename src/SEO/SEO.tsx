@@ -22,9 +22,7 @@ export default function SEO({
   article,
   langCode = "fr",
   useRobotoFont = false,
-  favicon = "",
   siteName,
-  titleTemplate,
 }: SEOProps) {
   return (
     <>

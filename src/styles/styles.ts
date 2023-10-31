@@ -1,5 +1,4 @@
-import { Theme } from "@mui/material";
-import { CSSObject } from "@emotion/react";
+import { Theme, CSSObject } from "@mui/material";
 
 export const DEFAULT_MAIN_COLOR = "#1b1b1b";
 
