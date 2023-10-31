@@ -1,6 +1,5 @@
-import { CSSObject } from "@emotion/react";
+import { CSSObject, Theme } from "@emotion/react";
 import { breakpointKey, themedACSS } from "../styles/styles";
-import { Theme } from "@mui/material";
 
 export const responsiveContainerCSS: CSSObject = {
   display: "flex",
