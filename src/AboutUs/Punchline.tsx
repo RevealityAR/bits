@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { punchlineCSS } from "./styles";
 import type { ReactNode } from "react";
 

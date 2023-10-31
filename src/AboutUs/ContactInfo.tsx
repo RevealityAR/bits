@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { useTheme } from "@emotion/react";
 import PunchlineParagraph from "./PunchlineParagraph";
 import { contactInfosCSS } from "./styles";

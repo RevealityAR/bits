@@ -2,7 +2,9 @@
   "extends": ["@tsconfig/strictest/tsconfig", "@tsconfig/vite-react/tsconfig"],
   "compilerOptions": {
     "checkJs": false,
-    "exactOptionalPropertyTypes": false
+    "exactOptionalPropertyTypes": false,
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react"
   },
   "include": ["./src/**/*"],
   "exclude": ["node_modules", "dist"]

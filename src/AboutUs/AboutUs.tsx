@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { mainViewCSS, responsiveContainerInsideCSS } from "./styles";
 import type { ReactNode } from "react";
 

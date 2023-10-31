@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { Theme, ThemeProvider, Global, CSSObject } from "@emotion/react";
 import { PropsWithChildren } from "react";
 
