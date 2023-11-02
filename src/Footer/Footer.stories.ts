@@ -1,7 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 
+import * as Socials from "../Socials/Socials.stories";
+import * as Contact from "../Contact/Contact.stories";
+import * as Newsletter from "../Newsletter/Newsletter.stories";
+
 import Footer from "./Footer";
+import { NewsletterProps } from "../Newsletter";
+import { SocialProps } from "..";
+import { ContactProps } from "../Contact";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta: Meta<typeof Footer> = {
@@ -25,22 +32,21 @@ export const Default: Story = {
   args: {},
 };
 
-export const Author: Story = {
+export const WithContact: Story = {
   args: {
-    author: "John Doe",
-    authorMail: "john.doe@reveality.com",
+    contact: Contact.withTitle.args as ContactProps,
   },
 };
 
-export const Socials: Story = {
+export const WithSocials: Story = {
   args: {
-    github: "reveality",
-    facebook: "reveality",
-    twitter: "reveality",
-    instagram: "reveality",
-    vimeo: "reveality",
-    soundcloud: "reveality",
-    youtube: "reveality",
+    socials: Socials.WithTitle.args as SocialProps,
+  },
+};
+
+export const WithNewletter: Story = {
+  args: {
+    newsletter: { ...Newsletter.Default.args } as NewsletterProps,
   },
 };
 
@@ -54,5 +60,14 @@ export const CustomLinks: Story = {
     const link = canvas.getByRole("link", { name: "test" });
 
     await userEvent.click(link);
+  },
+};
+
+export const Full: Story = {
+  args: {
+    ...WithContact.args,
+    ...WithSocials.args,
+    ...CustomLinks.args,
+    ...WithNewletter.args,
   },
 };

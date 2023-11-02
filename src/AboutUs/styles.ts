@@ -1,5 +1,5 @@
 import { CSSObject, Theme } from "@emotion/react";
-import { breakpointKey, themedACSS } from "../styles/styles";
+import { breakpointKey } from "../styles/styles";
 
 export const responsiveContainerCSS: CSSObject = {
   display: "flex",
@@ -57,8 +57,5 @@ export const contactInfosCSS = (theme: Theme): CSSObject => {
     fontSize: "1.1em",
     textAlign: "center",
     lineHeight: 1,
-    a: {
-      ...themedACSS(theme.palette.secondary.main),
-    },
   };
 };
