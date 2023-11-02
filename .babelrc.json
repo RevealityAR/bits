@@ -20,5 +20,5 @@
       }
     ]
   ],
-  "plugins": []
+  "plugins": ["babel-plugin-remove-graphql-queries"]
 }
