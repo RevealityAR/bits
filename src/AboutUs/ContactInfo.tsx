@@ -2,6 +2,7 @@ import { useTheme } from "@emotion/react";
 import PunchlineParagraph from "./PunchlineParagraph";
 import { contactInfosCSS } from "./styles";
 import type { ReactNode } from "react";
+import { Link } from "../Link";
 
 interface ContactInfoProps {
   contactEmail: string;
@@ -15,7 +16,7 @@ export default function ContactInfo({
   return (
     <div css={contactInfosCSS(theme)}>
       <PunchlineParagraph>
-        <a href={`mailto:${contactEmail}`}>{children}</a>
+        <Link href={`mailto:${contactEmail}`}>{children}</Link>
       </PunchlineParagraph>
     </div>
   );

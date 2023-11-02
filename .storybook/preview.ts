@@ -1,8 +1,9 @@
 import type { Preview } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { withThemeFromJSXProvider } from "@storybook/addon-themes";
-import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
-import { blueGrey, cyan, pink } from "@mui/material/colors";
+import { createTheme, CssBaseline } from "@mui/material";
+import { ThemeProvider } from "@emotion/react";
+import { blueGrey, cyan, pink, red, green } from "@mui/material/colors";
 
 // Gatsby's Link overrides:
 // Gatsby Link calls the `enqueue` & `hovering` methods on the global variable ___loader.
@@ -32,6 +33,9 @@ export const lightTheme = createTheme({
     secondary: {
       main: pink["A400"],
     },
+    action: {
+      hover: red["A200"],
+    },
   },
 });
 
@@ -43,6 +47,9 @@ export const darkTheme = createTheme({
     },
     secondary: {
       main: cyan["A400"],
+    },
+    action: {
+      hover: green["A200"],
     },
     background: {
       default: blueGrey["800"],
