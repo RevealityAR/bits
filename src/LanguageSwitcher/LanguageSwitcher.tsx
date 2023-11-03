@@ -19,7 +19,7 @@ export default function LanguageSwitcher<LangCode extends string>({
           <Button
             key={name}
             color={"inherit"}
-            css={buttonCSS(isCurrentLanguage)}
+            sx={buttonCSS(isCurrentLanguage)}
             variant="text"
             onClick={() => {
               onChange(langCode);
