@@ -5,6 +5,7 @@ import { NamedLink } from "../types";
 import { Newsletter, NewsletterProps } from "../Newsletter";
 import { SocialProps, Socials } from "../Socials";
 import { Contact, ContactProps } from "../Contact";
+import { Box } from "@mui/material";
 
 export interface FooterProps {
   contact?: ContactProps;
@@ -38,9 +39,11 @@ export default function Footer({
 
       <div css={linksCSS}>
         {customLinks?.map((link) => (
-          <Link key={link.path} href={link.path}>
-            {link.name}
-          </Link>
+          <Box css={{ marginLeft: "0.5em", marginRight: "0.5em" }}>
+            <Link key={link.path} href={link.path}>
+              {link.name}
+            </Link>
+          </Box>
         ))}
       </div>
       <p>Copyright 2023 Reveality</p>

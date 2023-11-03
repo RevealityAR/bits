@@ -52,7 +52,7 @@ export default function MenuLink<TState>({
   return (
     <GatsbyLink
       css={withLogo ? logoStyle(theme) : linkStyle(theme)}
-      activeStyle={activeLinkCSS(theme.palette.text.primary)}
+      activeStyle={withLogo ? {} : activeLinkCSS(theme.palette.text.primary)}
       {...props}
     >
       {children}

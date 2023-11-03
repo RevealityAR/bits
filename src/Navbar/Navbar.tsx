@@ -22,7 +22,7 @@ export default function Navbar<LangCode extends string>({
   return (
     <AppBar
       position="relative"
-      css={[css, { marginBottom: "2em" }]}
+      css={[css, { marginBottom: "2em", marginTop: "1em" }]}
       color="transparent"
       sx={{ boxShadow: "none" }}
     >

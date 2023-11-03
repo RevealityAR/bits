@@ -29,7 +29,7 @@ export default function Newsletter({
     >
       <p
         css={{
-          fontSize: "1.2em",
+          fontSize: "1.6em",
 
           fontWeight: 600,
           marginBottom: "1em",

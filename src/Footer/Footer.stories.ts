@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { userEvent, within } from "@storybook/testing-library";
 
 import * as Socials from "../Socials/Socials.stories";
 import * as Contact from "../Contact/Contact.stories";
@@ -52,7 +51,10 @@ export const WithNewletter: Story = {
 
 export const CustomLinks: Story = {
   args: {
-    customLinks: [{ name: "test", path: "test" }],
+    customLinks: [
+      { name: "test", path: "test" },
+      { name: "other", path: "other" },
+    ],
   },
 };
 
