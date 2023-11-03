@@ -22,7 +22,7 @@ export default function Navbar<LangCode extends string>({
   return (
     <AppBar
       position="relative"
-      css={css}
+      css={[css, { marginBottom: "2em" }]}
       color="transparent"
       sx={{ boxShadow: "none" }}
     >
@@ -34,8 +34,18 @@ export default function Navbar<LangCode extends string>({
         }}
         component="nav"
       >
-        {icon && <MenuLink to="/">{icon}</MenuLink>}
-        <Box sx={{ display: { xs: "flex" } }}>
+        {icon && (
+          <MenuLink withLogo to="/">
+            {icon}
+          </MenuLink>
+        )}
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           {pages?.map((page) => (
             <MenuLink
               css={{ marginRight: "2em", marginLeft: "2em" }}

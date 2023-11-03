@@ -4,7 +4,9 @@ import { CSSObject, Theme, useTheme } from "@emotion/react";
 
 interface MenuLinkProps<TState>
   extends PropsWithoutRef<GatsbyLinkProps<TState>>,
-    PropsWithChildren {}
+    PropsWithChildren {
+  withLogo?: boolean;
+}
 
 const activeLinkCSS = (color: string): CSSObject => {
   return {
@@ -16,7 +18,6 @@ const activeLinkCSS = (color: string): CSSObject => {
 export const linkStyle = (theme: Theme): CSSObject => {
   return {
     textTransform: "uppercase",
-    padding: "0.8em",
     margin: 0,
     color: theme.palette.text.primary,
     fontSize: "1.2em",
@@ -31,14 +32,26 @@ export const linkStyle = (theme: Theme): CSSObject => {
   };
 };
 
+export const logoStyle = (theme: Theme): CSSObject => {
+  return {
+    color: theme.palette.text.primary,
+    transition: "transform 200ms linear 0s",
+
+    "&:hover": {
+      transform: "scale(1.05)",
+    },
+  };
+};
+
 export default function MenuLink<TState>({
   children,
+  withLogo,
   ...props
 }: MenuLinkProps<TState>) {
   const theme = useTheme();
   return (
     <GatsbyLink
-      css={linkStyle(theme)}
+      css={withLogo ? logoStyle(theme) : linkStyle(theme)}
       activeStyle={activeLinkCSS(theme.palette.text.primary)}
       {...props}
     >

@@ -40,7 +40,7 @@ export const Default: Story = {
 export const WithIcon: Story = {
   args: {
     ...Default.args,
-    icon: <HomeIcon />,
+    icon: <HomeIcon sx={{ fontSize: 50 }} />,
   },
 };
 

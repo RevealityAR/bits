@@ -54,13 +54,6 @@ export const CustomLinks: Story = {
   args: {
     customLinks: [{ name: "test", path: "test" }],
   },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-
-    const link = canvas.getByRole("link", { name: "test" });
-
-    await userEvent.click(link);
-  },
 };
 
 export const Full: Story = {

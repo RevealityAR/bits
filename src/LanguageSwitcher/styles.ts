@@ -2,7 +2,6 @@ import { CSSObject } from "@emotion/react";
 
 export const containerCSS = (): CSSObject => {
   return {
-    padding: "1em",
     display: "flex",
     margin: "auto",
     flexDirection: "row",
@@ -10,7 +9,7 @@ export const containerCSS = (): CSSObject => {
 };
 
 export const buttonCSS = (isCurrentLanguage: boolean): CSSObject => {
-  const base = { margin: "0.2em", padding: "0.2em" };
+  const base = {};
   if (isCurrentLanguage) {
     return {
       ...base,
